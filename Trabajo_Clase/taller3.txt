@@ -1,0 +1,32 @@
+%Primer punto 
+ 
+abuelaMaterna(X,Y):- madre(X,Z),madre(Z,Y).
+abueloMaterno(X,Y):- padre(X,Z),madre(Z,Y).
+abuelaPaterna(X,Y):- madre(X,Z),padre(Z,Y).
+abueloPaterno(X,Y):- padre(X,Z),padre(Z,Y).
+
+%Segundo punto
+
+%Posibles consultas:
+
+sintoma_de(X, gripe).
+sintoma_de(X,anemia).
+elimina(X,cansancio).
+elimina(X, fiebre).
+elimina(X,tos).
+
+%Tercer punto
+
+padece(carlos,intoxicacion).
+sintoma(fiebre, gripe).
+sintoma(diarrea,intoxicacion).
+sintoma(cansancio,gripe).
+suprime(aspirina,fiebre).
+suprime(lomotil,diarrea).
+cura(Z,X):- sintoma(Y,Z),suprime(X,Y).
+recetar(X,Y):- padece(X,Z), cura(Z,Y).
+padece(pedro,gripe). 
+padece(pedro,hepatitis). 
+padece(juan, hepatitis).
+padece(maria,gripe).
+

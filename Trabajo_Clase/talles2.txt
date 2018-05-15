@@ -1,0 +1,25 @@
+% Primer Punto
+
+progenitor(clara, jose).
+progenitor(tomas,jose).
+progenitor(jose,ana).
+progenitor(jose,patricia).
+progenitor(tomas,isabel).
+progenitor(patricia,jaime).
+
+% Segundo punto
+
+%A. De quien es padre Jaime?.
+%B. Quien es el padre de Jaime?.
+%C. Quien es hijo de clara, y a su vez, hijo de Patricia?.
+
+%Tercer punto
+
+%Consultas:
+
+?- progenitor(isabel,A).
+?- progenitor(B, patricia).
+?- abuelo(A,C):- progenitor(A,B), progenitor(B,C).
+?- abuelo(A,patricia).
+?- bisabuelo(A,C):- progenitor(A,B),abuelo(B,C).
+?- bisabuelo(A,jaime).
